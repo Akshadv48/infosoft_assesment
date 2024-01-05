@@ -1,7 +1,7 @@
 # infosoft_assesment
 ### Calender Problem Solution 
 #### in the given code the problem was in the given insert fucntion where the insert was happening on wrong parameter
-####def insert(self, node: 'Node') -> bool:
+#### def insert(self, node: 'Node') -> bool:
 ####            if not self.right_child:
 ####                self.right_child = node
 ####                return True
