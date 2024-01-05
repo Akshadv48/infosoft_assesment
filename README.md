@@ -15,4 +15,4 @@
 if we see above function the comparison between node.start and self.end is wrong since we need not to do double booking we have only two conditions to check
 node.end should be <= self.start and node.start >= self.end
 so in the above function its opposite and hence it causes double booking and throws error.
-so we need to add else condition if there is a double booking return False.
+so we need to add else condition if the above two condition is not satisfied we can assume that there is a case of double booking and we can return false in the case.
