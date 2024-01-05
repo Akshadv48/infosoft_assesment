@@ -6,20 +6,24 @@ class Node():
         self.right_child: Optional[Node] = None
 
     def insert(self, node: 'Node') -> bool:
-
-        if node.start < self.end : return False
-        if node.start >= self.start and node.end <= self.end: return False
-
-        if node.start >= self.end :
-            if not self.right_child:
-                self.right_child = node
-                return True
-            return self.left_child.insert(node)
-        elif node.end >= self.start:
+        
+        if node.end <= self.start:
+            
             if not self.left_child:
                 self.left_child = node
                 return True
+            return self.left_child.insert(node)
+        elif node.start >= self.end:
+            
+            if not self.right_child:
+                self.right_child = node
+                return True
             return self.right_child.insert(node)
+        else:
+            
+            return False
+
+    
 
 class Calendar():
     def __init__(self):
@@ -36,4 +40,4 @@ calendar = Calendar()
 print(calendar.book(5, 10))
 print(calendar.book(8, 13))
 print(calendar.book(10, 15))
-print(calendar.book(9, 12))
+print(calendar.book(10, 12))
